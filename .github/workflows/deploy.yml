@@ -1,0 +1,39 @@
+name: Deploy static site to S3
+
+on:
+  push:
+    branches: [ "main" ]  # или другая ветка, с которой деплоишь
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Забираем код из репозитория
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Настраиваем AWS доступ из секретов
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # 3. Устанавливаем AWS CLI (если не предустановлен)
+      - name: Install AWS CLI
+        run: |
+          pip install awscli
+
+      # 4. Деплой: синхронизируем файлы с S3
+      - name: Sync files to S3
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET }} \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "terraform.tfstate*" \
+            --exclude "*.tf"
+
+
