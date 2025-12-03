@@ -1,0 +1,8 @@
+cat > .gitignore << 'EOF'
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!.terraform.lock.hcl    # эту строку оставляем — lock-файл нужно коммитить
+EOF
