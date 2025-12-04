@@ -1,32 +1,79 @@
-<section id="about" class="section">
-  <div class="container about-grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - Zheenbek Karaev</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <div>
-      <h2 class="section-title">About Me</h2>
-      <p class="section-text">
-        Hi, my name is Zheenbek Karaev. I’m a DevOps & Cloud engineering enthusiast
-        learning how to build and automate modern infrastructure using AWS, Linux,
-        Docker, Kubernetes and Terraform.
-      </p>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">My<span>Site</span></div>
 
-      <p class="section-text">
-        My journey started with web development and simple personal projects,
-        and step by step I moved into cloud, containers and CI/CD. I enjoy
-        understanding how systems work from the inside, deploying real projects,
-        fixing issues and making things more reliable.
-      </p>
+      <nav class="nav" id="nav">
+        <a href="index.html#home">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
 
-      <p class="section-text">
-        Right now I’m building my portfolio with AWS, GitHub Actions, Terraform
-        and Kubernetes, and I’m focused on growing into a strong DevOps / Cloud
-        Engineer who can design, automate and support production systems.
-      </p>
+      <button class="menu-btn" id="menuBtn">☰</button>
     </div>
+  </header>
 
-    <div>
-      <img src="img/1234.jpg" alt="Zheenbek Karaev" class="profile-photo">
+  <!-- MAIN CONTENT -->
+  <main class="section">
+    <div class="container about-grid">
+
+      <div>
+        <h1 class="section-title">About Me</h1>
+
+        <p class="section-text">
+          Hi, I’m <strong>Zheenbek Karaev</strong>, an aspiring DevOps &amp; Cloud Engineer.
+          I focus on building modern cloud infrastructure using AWS, Docker, Kubernetes,
+          Terraform, Linux and CI/CD automation.
+        </p>
+
+        <p class="section-text">
+          My journey started with web development at a young age. Later, I transitioned
+          into cloud technologies and DevOps engineering — I enjoy deploying applications,
+          building pipelines, fixing issues and making systems reliable and scalable.
+        </p>
+
+        <p class="section-text">
+          I'm currently building real projects using AWS, GitHub Actions, Terraform,
+          containerization and microservice concepts. My goal is to become a strong
+          Cloud/DevOps Engineer and keep growing my skills every day.
+        </p>
+
+        <ul class="about-list">
+          <li>Experience with AWS (EC2, S3, VPC, IAM, CloudFront)</li>
+          <li>Docker & Kubernetes beginner → deploying apps in containers</li>
+          <li>Terraform infrastructure as code</li>
+          <li>CI/CD pipelines (GitHub Actions)</li>
+          <li>Linux administration & networking basics</li>
+        </ul>
+      </div>
+
+      <div class="about-photo-wrapper">
+        <img src="img/zheenbek-karaev.jpg" alt="Zheenbek Karaev" class="profile-photo">
+      </div>
+
     </div>
+  </main>
 
-  </div>
-</section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Zheenbek Karaev. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 

@@ -403,3 +403,7 @@ body {
   }
 }
 
+.nav a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
