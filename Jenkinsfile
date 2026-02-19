@@ -13,13 +13,18 @@ pipeline {
       steps { checkout scm }
     }
 
+
     stage('Build Docker Image') {
       steps {
-        sh '''
-          docker build -t "$FULL_IMAGE" .
-        '''
+         sh '''
+           docker buildx build \
+            --platform linux/amd64 \
+            -t juzonb1r/my-website:${BUILD_NUMBER} \
+            --push .
+           '''
       }
     }
+
 
     stage('Login to DockerHub') {
       steps {
